@@ -23,7 +23,7 @@ function DISH_MAKER.CreateRecipe(name, fn, cooktime, potlevel, category, priorit
 
         potlevel = potlevel or "high",
         cookbook_category = category,
-        priority = priority or 40, -- Will overwrite most default DISH_MAKER
+        priority = priority or 40, -- Will overwrite most default recipes
         weight = 1,
     }
 end
@@ -76,13 +76,13 @@ function DISH_MAKER.AddWarlySpecial(recipe)
     DISH_MAKER.AddRecipe(recipe, false, true, false)
 end
 
---- Adds all DISH_MAKER from the given table to all specified cooking stations
---- @param DISH_MAKER table
+--- Adds all recipes from the given table to all specified cooking stations
+--- @param recipes table
 --- @param cookpot boolean?
 --- @param portable boolean?
 --- @param archive boolean?
-function DISH_MAKER.AddDISH_MAKER(DISH_MAKER, cookpot, portable, archive)
-    for index, recipe in ipairs(DISH_MAKER) do
+function DISH_MAKER.AddRecipes(recipes, cookpot, portable, archive)
+    for index, recipe in ipairs(recipes) do
         DISH_MAKER.AddRecipe(recipe, cookpot, portable, archive)
     end
 end
