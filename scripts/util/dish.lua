@@ -13,7 +13,6 @@ function DISH_MAKER.CreateRecipe(name, fn, cooktime, potlevel, category, priorit
         name = name,
         test = fn,
 
-        -- ? What about those values set up on the prefab
         foodtype = FOODTYPE.MEAT,
         health = TUNING.HEALING_MED,
         hunger = TUNING.CALORIES_LARGE,
@@ -35,27 +34,24 @@ end
 --- @param archive boolean?
 function DISH_MAKER.AddRecipe(recipe, cookpot, portable, archive)
     if cookpot ~= nil then
-        -- Keep existing cookpot value
     elseif recipe and recipe.cookpot ~= nil then
         cookpot = recipe.cookpot
     else
-        cookpot = true -- Default
+        cookpot = true
     end
 
     if portable ~= nil then
-        -- Keep existing portable value
     elseif recipe and recipe.portable ~= nil then
         portable = recipe.portable
     else
-        portable = true -- Default
+        portable = true
     end
 
     if archive ~= nil then
-        -- Keep existing archive value
     elseif recipe and recipe.archive ~= nil then
         archive = recipe.archive
     else
-        archive = true -- Default
+        archive = true
     end
 
     if cookpot then
