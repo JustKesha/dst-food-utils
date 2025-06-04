@@ -35,7 +35,7 @@ function FOOD_MAKER.CreateFoodEntity(options)
         texture = options.texture or "meatballs",
         atlas = options.atlas or "images/inventoryimages.xml",
         anim_bank = options.anim_bank or "berries",
-        anim_build = options.anim_build or anim_bank,
+        anim_build = options.anim_build or "berries",
         anim_start = options.anim_start or "idle",
         sound = options.sound or "generic",
         temp_bonus = options.temp_bonus or 0,
